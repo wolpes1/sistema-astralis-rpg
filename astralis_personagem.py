@@ -3,44 +3,55 @@
 class Personagem_jogador:
     
     #Definição dos aspectos principais da classe
-    def __init__(self, nome = str, jogador = str, status = {"Força":0,"Habilidade":0, "Vitalidade": 0, "Resistência": 0, "Inteligência": 0, "Afinidade Mágica": 0}, pericias = []):
+    def __init__(self, nome = str, jogador = str, forca = 0, habilidade = 0, vitalidade = 0, resistencia = 0, inteligencia = 0, afinidade_magica = 0):
         self.nome = nome
         self.jogador = jogador
-        self.status = status
+        self.forca = forca
+        self.habilidade = habilidade
+        self.vitalidade = vitalidade
+        self.resistencia = resistencia
+        self.inteligencia = inteligencia
+        self.afinidade_magica = afinidade_magica
 
     def nome(self):
         return self.nome
     
     def jogador(self):
         return self.jogador
+    
+    def status(self):
+        status = f"""Força = {self.forca}
+        Habilidade = {self.habilidade}
+        Vitalidade = {self.vitalidade}
+        Resistência = {self.resistencia}
+        Inteligência = {self.inteligencia}
+        Afinidade Mágica = {self.afinidade_magica}"""
+        return status
 
     #Definição da string que aparecerá caso necessário mostrar os aspectos gerais do personagem
     def __str__(self):
         return f"{self.nome}, pertence a {self.jogador}\nSeus status são:{self.status}"
-
-
-    #Adicionando status
-    def adicionar_força(self, quantidade_pontos = int):
-        self.status["Força"] += quantidade_pontos
-        print(f"Seu personagem ganhou #{quantidade_pontos} de força!")
     
-    def adicionar_habilidade(self, quantidade_pontos = int):
-        self.status["Habilidade"] += quantidade_pontos
-        print(f"Seu personagem ganhou #{quantidade_pontos} de habilidade!")
+    def definir_nome(self, nome_carregado):
+        self.nome = nome_carregado
 
-    def adicionar_vitalidade(self, quantidade_pontos = int):
-        self.status["Vitalidade"] += quantidade_pontos
-        print(f"Seu personagem ganhou #{quantidade_pontos} de vitalidade!")
+    def definir_jogador(self, jogador_carregado):
+        self.jogador = jogador_carregado
 
-    def adicionar_resistencia(self, quantidade_pontos = int):
-        self.status["Resistência"] += quantidade_pontos
-        print(f"Seu personagem ganhou #{quantidade_pontos} de resistêcia!")
+    def definir_for(self,valor):
+        self.forca = valor
 
-    def adicionar_inteligencia(self, quantidade_pontos = int):
-        self.status["Inteligência"] += quantidade_pontos
-        print(f"Seu personagem ganhou #{quantidade_pontos} de inteligência!")
+    def definir_hab(self,valor):
+        self.habilidade = valor
+    
+    def definir_vit(self,valor):
+        self.vitalidade = valor
 
-    def adicionar_afinidade_magica(self, quantidade_pontos = int):
-        self.status["Afinidade Mágica"] += quantidade_pontos
-        print(f"Seu personagem ganhou #{quantidade_pontos} de Afinidade Mágica!")
+    def definir_int(self,valor):
+        self.inteligencia = valor
 
+    def definir_res(self,valor):
+        self.resistencia = valor
+
+    def definir_afi(self,valor):
+        self.afinidade_magica = valor

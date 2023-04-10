@@ -5,6 +5,6 @@ import os
 def limpar_tela():
     os.system('cls')
 
-alir = as_p.Personagem_jogador("Fifnier", "Renan")
+alir = as_p.Personagem_jogador("Alir", "Renan")
 
 salvar.salvar_personagem(alir, 'Alir')
