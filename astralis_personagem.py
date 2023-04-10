@@ -20,17 +20,25 @@ class Personagem_jogador:
         return self.jogador
     
     def status(self):
-        status = f"""Força = {self.forca}
+        self.status = f"""Força = {self.forca}
         Habilidade = {self.habilidade}
         Vitalidade = {self.vitalidade}
         Resistência = {self.resistencia}
         Inteligência = {self.inteligencia}
         Afinidade Mágica = {self.afinidade_magica}"""
-        return status
+        return self.status
 
     #Definição da string que aparecerá caso necessário mostrar os aspectos gerais do personagem
     def __str__(self):
-        return f"{self.nome}, pertence a {self.jogador}\nSeus status são:{self.status}"
+        return f"""
+        Personagem: {self.nome}, pertence a {self.jogador}
+        Seus status são:
+        Força = {self.forca}
+        Habilidade = {self.habilidade}
+        Vitalidade = {self.vitalidade}
+        Resistência = {self.resistencia}
+        Inteligência = {self.inteligencia}
+        Afinidade Mágica = {self.afinidade_magica}"""
     
     def definir_nome(self, nome_carregado):
         self.nome = nome_carregado
@@ -55,3 +63,5 @@ class Personagem_jogador:
 
     def definir_afi(self,valor):
         self.afinidade_magica = valor
+
+    

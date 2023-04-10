@@ -17,12 +17,14 @@ def processar_mensagem(mensagem):
     dados_e_lados = mensagem_separada[1].lower().split("d")
     return dados_e_lados
 
-mensagem_recebida = input("Qual sua rolagem? (Utilize /r (número de dados)D(número de lados))\n")
+def execucao():
 
-os.system('cls')
+    mensagem_recebida = input("Qual sua rolagem? (Utilize /r (número de dados)D(número de lados))\n")
 
-lados_e_dados_recebidos = processar_mensagem(mensagem_recebida)
-dados = int(lados_e_dados_recebidos[0])
-lados = int(lados_e_dados_recebidos[1])
+    os.system('cls')
 
-print(f"Os dados rolados foram: {rolagem(lados, dados)}")
+    lados_e_dados_recebidos = processar_mensagem(mensagem_recebida)
+    dados = int(lados_e_dados_recebidos[0])
+    lados = int(lados_e_dados_recebidos[1])
+
+    print(f"Os dados rolados foram: {rolagem(lados, dados)}")
