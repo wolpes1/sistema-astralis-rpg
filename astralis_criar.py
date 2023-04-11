@@ -1,8 +1,16 @@
+#Módulo de criação de personagem do Sistema Astralis RPG
+
+#Módulos necessários
+
 import os
-import astralis_personagem as personagem
+import astralis_classe_personagem as personagem
+
+#Limpeza do terminal
 
 def limpar_tela():
     os.system('cls')
+
+#Atribuição dos dados do personagem via Terminal
 
 def criar_personagem():
     nome_personagem = input('Qual será o nome do personagem?\n')

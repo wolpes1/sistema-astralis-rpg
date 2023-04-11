@@ -1,11 +1,19 @@
+#Menu principal do Sistema Astralis RPG
+
+#Módulos Necessários
+
 import astralis_carregar as carregamento
 import astralis_salvar as salvamento
 import astralis_rolagem as rolagem_dados
-import astralis_criar as criar
+import astralis_criar as criacao
 import os
+
+#Limpeza do terminal
 
 def limpar_tela():
     os.system('cls')
+
+#Variáveis previamente inicializadas
 
 opcao_escolhida = None
 
@@ -14,6 +22,8 @@ ficha_personagem = None
 ficha_carregada = None
 
 limpar_tela()
+
+#Loop do programa
 
 while opcao_escolhida != 'sair':
 
@@ -31,9 +41,11 @@ while opcao_escolhida != 'sair':
     match opcao_escolhida:
         
         case 'criar':
+
             limpar_tela()
-            ficha_personagem = criar.criar_personagem()
+            ficha_personagem = criacao.criar_personagem()
             limpar_tela()
+
         case 'salvar':
 
             limpar_tela()  
@@ -62,7 +74,9 @@ while opcao_escolhida != 'sair':
                 limpar_tela()
 
         case 'visualizar':
+
             limpar_tela()
+
             try:
                 print(ficha_personagem.__str__(ficha_personagem))
                 input('Pressione Enter para continuar.')
@@ -72,17 +86,20 @@ while opcao_escolhida != 'sair':
 
 
         case 'rolar':
+
             limpar_tela()
             rolagem_dados.execucao()
             input('Pressione Enter para continuar.')
             limpar_tela()
 
         case 'sair':
+
             limpar_tela()
             input('Obrigade por usar este app!\nPressione enter para sair.')
             limpar_tela()
             break
 
         case _:
+            
             limpar_tela()
             input('Esta opção não é válida!\nPressione enter para continuar.')

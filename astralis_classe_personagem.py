@@ -2,7 +2,8 @@
 
 class Personagem_jogador:
     
-    #Definição dos aspectos principais da classe
+    #Aspectos principais da classe
+
     def __init__(self, nome = str, jogador = str, forca = 0, habilidade = 0, vitalidade = 0, resistencia = 0, inteligencia = 0, afinidade_magica = 0):
         self.nome = nome
         self.jogador = jogador
@@ -12,6 +13,8 @@ class Personagem_jogador:
         self.resistencia = resistencia
         self.inteligencia = inteligencia
         self.afinidade_magica = afinidade_magica
+
+    #Retornos dos atributos contidos na classe
 
     def nome(self):
         return self.nome
@@ -28,7 +31,6 @@ class Personagem_jogador:
         Afinidade Mágica = {self.afinidade_magica}"""
         return self.status
 
-    #Definição da string que aparecerá caso necessário mostrar os aspectos gerais do personagem
     def __str__(self):
         return f"""
         Personagem: {self.nome}, pertence a {self.jogador}
@@ -39,6 +41,8 @@ class Personagem_jogador:
         Resistência = {self.resistencia}
         Inteligência = {self.inteligencia}
         Afinidade Mágica = {self.afinidade_magica}"""
+    
+    #Atribuições de atributos da classe
     
     def definir_nome(self, nome_carregado):
         self.nome = nome_carregado
