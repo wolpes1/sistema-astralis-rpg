@@ -31,6 +31,7 @@ class Personagem_jogador:
         Afinidade Mágica = {self.afinidade_magica}"""
         return self.status
 
+
     def __str__(self):
         return f"""
         Personagem: {self.nome}, pertence a {self.jogador}
@@ -67,5 +68,3 @@ class Personagem_jogador:
 
     def definir_afi(self,valor):
         self.afinidade_magica = valor
-
-    
