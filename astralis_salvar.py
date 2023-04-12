@@ -2,6 +2,7 @@
 
 #Módulos necessários
 
+import os
 import pandas
 
 #Conversão dos dados de personagem para dict
@@ -17,4 +18,7 @@ def salvar_personagem(personagem, nome_personagem):
     dados_convertidos = None
     dados_convertidos = converter_dados_personagem(personagem)
     dataframe_feito = pandas.DataFrame([dados_convertidos])
+    if os.path.isdir('personagens') == False:
+        os.mkdir('./personagens')
+
     dataframe_feito.to_excel(r'personagens/Ficha ' + nome_personagem + '.xlsx')
