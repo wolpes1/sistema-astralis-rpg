@@ -2,10 +2,12 @@
 
 #Módulos Necessários
 
-import astralis_carregar as carregamento
-import astralis_salvar as salvamento
-import astralis_rolagem as rolagem_dados
-import astralis_criar as criacao
+import astralis_opcao_carregar_pers as carregamento
+import astralis_opcao_salvar_pers as salvamento
+import astralis_opcao_rolagem as rolagem_dados
+import astralis_opcao_criar_pers as criacao
+import astralis_opcao_criar_magia as criar_magia
+import astralis_opcao_carregar_magia as carregar_magia
 import os
 
 #Limpeza do terminal
@@ -33,6 +35,8 @@ while opcao_escolhida != 'sair':
     salvar => Salvar Personagem
     carregar => Carregar Personagem
     visualizar => Visualizar Personagem
+    criarm => Salvar Magia
+    carregarm => Carregar Magia
     rolar => Rolar dados
     sair => Sair do programa
 
@@ -84,6 +88,20 @@ while opcao_escolhida != 'sair':
             except:
                 input('Não há personagem carregado!\nPressione enter para continuar.')
 
+
+        case 'criarm':
+
+            criar_magia.execucao()
+
+        case 'carregarm':
+
+            limpar_tela()
+            magia_desejada = input('Qual magia você deseja carregar?\n').capitalize()
+            try:
+                magia_carregada = carregar_magia.carregar_dados(magia_desejada)
+                input('Magia carregada com sucesso!\nPressione Enter para continuar.')
+            except:
+                input('Não existe esta magia!\nPressione Enter para continuar')
 
         case 'rolar':
 
