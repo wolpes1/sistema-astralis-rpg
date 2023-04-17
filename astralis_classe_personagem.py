@@ -4,7 +4,7 @@ class Personagem_jogador:
     
     #Aspectos principais da classe
 
-    def __init__(self, nome = str, jogador = str, forca = 0, habilidade = 0, vitalidade = 0, resistencia = 0, inteligencia = 0, afinidade_magica = 0, magias = []):
+    def __init__(self, nome = str, jogador = str, forca = 0, habilidade = 0, vitalidade = 0, resistencia = 0, inteligencia = 0, afinidade_magica = 0):
         self.nome = nome
         self.jogador = jogador
         self.forca = forca
@@ -13,7 +13,6 @@ class Personagem_jogador:
         self.resistencia = resistencia
         self.inteligencia = inteligencia
         self.afinidade_magica = afinidade_magica
-        self.magias = magias
 
     #Retornos dos atributos contidos na classe
 
@@ -69,12 +68,3 @@ class Personagem_jogador:
 
     def definir_afi(self,valor):
         self.afinidade_magica = valor
-
-    def adicionar_magia(self,magia):
-        self.magias.append(magia)
-
-    def remover_ultima_magia(self):
-        self.magias.pop()
-
-    def remover_todas_magias(self):
-        self.magias.clear()

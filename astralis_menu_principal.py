@@ -6,8 +6,6 @@ import astralis_opcao_carregar_pers as carregamento
 import astralis_opcao_salvar_pers as salvamento
 import astralis_opcao_rolagem as rolagem_dados
 import astralis_opcao_criar_pers as criacao
-import astralis_opcao_criar_magia as criar_magia
-import astralis_opcao_carregar_magia as carregar_magia
 import os
 
 #Limpeza do terminal
@@ -19,9 +17,13 @@ def limpar_tela():
 
 opcao_escolhida = None
 
-ficha_personagem = None
+ficha_criada = None
 
 ficha_carregada = None
+
+magia_carregada = None
+
+ficha_com_magia = None
 
 limpar_tela()
 
@@ -35,8 +37,9 @@ while opcao_escolhida != 'sair':
     salvar => Salvar Personagem
     carregar => Carregar Personagem
     visualizar => Visualizar Personagem
-    criarm => Salvar Magia
     carregarm => Carregar Magia
+    visualizarm => Visualizar Magia
+    adicionarm => Adicionar Magia ao Personagem carregado
     rolar => Rolar dados
     sair => Sair do programa
 
@@ -47,7 +50,7 @@ while opcao_escolhida != 'sair':
         case 'criar':
 
             limpar_tela()
-            ficha_personagem = criacao.criar_personagem()
+            ficha_criada = criacao.criar_personagem()
             limpar_tela()
 
         case 'salvar':
@@ -56,11 +59,12 @@ while opcao_escolhida != 'sair':
 
             try:
   
-                salvamento.salvar_personagem(ficha_personagem, ficha_personagem.nome)
+                salvamento.salvar_personagem(ficha_criada, ficha_criada.nome)
                 input('Salvamento concluido! Pressione Enter para continuar.')
                 limpar_tela()
             except:
                 input('Não há personagem para salvar!\nPressione enter para continuar.')
+                limpar_tela()
 
         case 'carregar':
             
@@ -71,7 +75,6 @@ while opcao_escolhida != 'sair':
             try:
                 ficha_carregada = carregamento.carregar_dados(nome_salvo)
                 input("Carregamento executado com sucesso!")
-                ficha_personagem = ficha_carregada
                 limpar_tela()
             except:
                 input('Houve um erro no carregamento!\nPressione enter para continuar.')
@@ -82,26 +85,11 @@ while opcao_escolhida != 'sair':
             limpar_tela()
 
             try:
-                print(ficha_personagem.__str__(ficha_personagem))
+                print(ficha_carregada.__str__(ficha_carregada))
                 input('Pressione Enter para continuar.')
                 limpar_tela()
             except:
                 input('Não há personagem carregado!\nPressione enter para continuar.')
-
-
-        case 'criarm':
-
-            criar_magia.execucao()
-
-        case 'carregarm':
-
-            limpar_tela()
-            magia_desejada = input('Qual magia você deseja carregar?\n').capitalize()
-            try:
-                magia_carregada = carregar_magia.carregar_dados(magia_desejada)
-                input('Magia carregada com sucesso!\nPressione Enter para continuar.')
-            except:
-                input('Não existe esta magia!\nPressione Enter para continuar')
 
         case 'rolar':
 
