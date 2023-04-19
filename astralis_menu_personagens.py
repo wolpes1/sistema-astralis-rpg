@@ -1,10 +1,9 @@
-#Menu principal do Sistema Astralis RPG
+#Menu de personagens do Sistema Astralis RPG
 
 #Módulos Necessários
 
 import astralis_opcao_carregar_pers as carregamento
 import astralis_opcao_salvar_pers as salvamento
-import astralis_opcao_rolagem as rolagem_dados
 import astralis_opcao_criar_pers as criacao
 import os
 
@@ -17,30 +16,21 @@ def limpar_tela():
 
 opcao_escolhida = None
 
-ficha_criada = None
-
-ficha_carregada = None
-
-magia_carregada = None
-
-ficha_com_magia = None
-
 limpar_tela()
 
 #Loop do programa
 
 while opcao_escolhida != 'sair':
 
-    opcao_escolhida = input("""Bem vinde ao Astralis RPG!
+    opcao_escolhida = input("""Bem vinde ao Sistema de criação de personagens Astralis RPG!
+
     O que deseja fazer?
+
     criar => Criar Personagem
     salvar => Salvar Personagem
     carregar => Carregar Personagem
     visualizar => Visualizar Personagem
-    carregarm => Carregar Magia
-    visualizarm => Visualizar Magia
-    adicionarm => Adicionar Magia ao Personagem carregado
-    rolar => Rolar dados
+    adicionarm => Adicionar Magia ao personagem
     sair => Sair do programa
 
     Opção:""").lower()
@@ -80,6 +70,15 @@ while opcao_escolhida != 'sair':
                 input('Houve um erro no carregamento!\nPressione enter para continuar.')
                 limpar_tela()
 
+        case 'adicionarm':
+
+            limpar_tela()
+            magia_desejada = input('Qual magia você deseja adicionar?')
+            ficha_carregada.adicionar_magia(magia_desejada)
+            limpar_tela()
+            input('Sua magia foi adicionada!')
+            limpar_tela()
+
         case 'visualizar':
 
             limpar_tela()
@@ -90,13 +89,7 @@ while opcao_escolhida != 'sair':
                 limpar_tela()
             except:
                 input('Não há personagem carregado!\nPressione enter para continuar.')
-
-        case 'rolar':
-
-            limpar_tela()
-            rolagem_dados.execucao()
-            input('Pressione Enter para continuar.')
-            limpar_tela()
+                limpar_tela()
 
         case 'sair':
 

@@ -1,7 +1,7 @@
 #Personagem do sistema de RPG criado por Renan Lopes Cavalcante
 
 class Personagem_jogador:
-    
+
     #Aspectos principais da classe
 
     def __init__(self, nome = str, jogador = str, forca = 0, habilidade = 0, vitalidade = 0, resistencia = 0, inteligencia = 0, afinidade_magica = 0):
@@ -13,6 +13,7 @@ class Personagem_jogador:
         self.resistencia = resistencia
         self.inteligencia = inteligencia
         self.afinidade_magica = afinidade_magica
+        self.magias = []
 
     #Retornos dos atributos contidos na classe
 
@@ -41,7 +42,8 @@ class Personagem_jogador:
         Vitalidade = {self.vitalidade}
         Resistência = {self.resistencia}
         Inteligência = {self.inteligencia}
-        Afinidade Mágica = {self.afinidade_magica}"""
+        Afinidade Mágica = {self.afinidade_magica}
+        Magias = {self.magias}"""
     
     #Atribuições de atributos da classe
     
@@ -68,3 +70,8 @@ class Personagem_jogador:
 
     def definir_afi(self,valor):
         self.afinidade_magica = valor
+
+    def adicionar_magia(self, magia):
+        self.magias.append(magia)
+
+    

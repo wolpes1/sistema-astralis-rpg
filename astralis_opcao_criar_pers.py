@@ -30,7 +30,7 @@ def criar_personagem():
     afi_personagem = int(input('E seus niveis de:\nAfinidade Mágica:'))
     limpar_tela()
     print('Definindo personagem...')
-    ficha_personagem = personagem.Personagem_jogador(nome_personagem,jogador_personagem,for_personagem,hab_personagem,res_personagem,vit_personagem,int_personagem,afi_personagem,[])
+    ficha_personagem = personagem.Personagem_jogador(nome_personagem,jogador_personagem,for_personagem,hab_personagem,res_personagem,vit_personagem,int_personagem,afi_personagem)
     input('Pressione enter para continuar...')
     limpar_tela()
     print('Personagem definido!')
