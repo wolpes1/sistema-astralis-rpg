@@ -30,8 +30,6 @@ while opcao_escolhida != 'sair':
     salvar => Salvar Personagem
     carregar => Carregar Personagem
     visualizar => Visualizar Personagem
-    adicionarm => Adicionar Magia ao personagem
-    sair => Sair do programa
 
     Opção:""").lower()
 
@@ -69,15 +67,6 @@ while opcao_escolhida != 'sair':
             except:
                 input('Houve um erro no carregamento!\nPressione enter para continuar.')
                 limpar_tela()
-
-        case 'adicionarm':
-
-            limpar_tela()
-            magia_desejada = input('Qual magia você deseja adicionar?')
-            ficha_carregada.adicionar_magia(magia_desejada)
-            limpar_tela()
-            input('Sua magia foi adicionada!')
-            limpar_tela()
 
         case 'visualizar':
 
