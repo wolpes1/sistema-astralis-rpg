@@ -12,6 +12,8 @@ def limpar_tela():
 
 #Atribuição dos dados do personagem via Terminal
 
+frase_pericia = 'O personagem tem treino em'
+
 def criar_personagem():
     nome_personagem = input('Qual será o nome do personagem?\n')
     limpar_tela()

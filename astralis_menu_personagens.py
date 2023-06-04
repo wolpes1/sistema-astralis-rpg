@@ -43,16 +43,10 @@ while opcao_escolhida != 'sair':
 
         case 'salvar':
 
-            limpar_tela()  
-
-            try:
-  
-                salvamento.salvar_personagem(ficha_criada, ficha_criada.nome)
-                input('Salvamento concluido! Pressione Enter para continuar.')
-                limpar_tela()
-            except:
-                input('Não há personagem para salvar!\nPressione enter para continuar.')
-                limpar_tela()
+            limpar_tela()    
+            salvamento.salvar_personagem(ficha_criada, ficha_criada.nome)
+            input('Salvamento concluido! Pressione Enter para continuar.')
+            limpar_tela()
 
         case 'carregar':
             
@@ -60,25 +54,16 @@ while opcao_escolhida != 'sair':
             nome_salvo = input('Qual o nome do seu personagem?').capitalize()
             limpar_tela()
 
-            try:
-                ficha_carregada = carregamento.carregar_dados(nome_salvo)
-                input("Carregamento executado com sucesso!")
-                limpar_tela()
-            except:
-                input('Houve um erro no carregamento!\nPressione enter para continuar.')
-                limpar_tela()
+            ficha_carregada = carregamento.carregar_dados(nome_salvo)
+            input("Carregamento executado com sucesso!")
+            limpar_tela()
 
         case 'visualizar':
 
             limpar_tela()
-
-            try:
-                print(ficha_carregada.__str__(ficha_carregada))
-                input('Pressione Enter para continuar.')
-                limpar_tela()
-            except:
-                input('Não há personagem carregado!\nPressione enter para continuar.')
-                limpar_tela()
+            print(ficha_carregada.__str__(ficha_carregada))
+            input('Pressione Enter para continuar.')
+            limpar_tela()
 
         case 'sair':
 
