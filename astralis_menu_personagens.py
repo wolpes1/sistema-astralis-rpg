@@ -55,13 +55,18 @@ while opcao_escolhida != 'sair':
             limpar_tela()
 
             ficha_carregada = carregamento.carregar_dados(nome_salvo)
+            ficha_criada = None
             input("Carregamento executado com sucesso!")
             limpar_tela()
 
         case 'visualizar':
 
             limpar_tela()
-            print(ficha_carregada.__str__(ficha_carregada))
+            if (ficha_criada != None):
+                print(ficha_criada.__str__())
+            else:
+                print(ficha_carregada.__str__(ficha_carregada))
+
             input('Pressione Enter para continuar.')
             limpar_tela()
 
